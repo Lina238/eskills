@@ -1,0 +1,80 @@
+
+.hero {
+    background-image: url("../../../../public/images/img.jpg");
+    background-repeat: no-repeat;
+    background-position:center;
+    background-size:cover;
+    height: 90vh;
+    width: 100%;
+    box-shadow: inherit; 
+  }
+  .hero .container {
+    padding-top: 7%;
+  }
+  .hero h1 {
+    color: #fff;
+    font-size: 35px;   
+    font-weight: 600;
+  }
+  
+  
+  .hero p {
+    padding-top: 5px;
+    color:rgb(255,255,255,0.9);
+    
+   
+  }
+  form {
+    background-color:rgba(95, 141, 78, 0.4);
+    border-radius: 5px;
+    margin-top: 45px;
+    padding: 0 20px;
+  }
+  form input {
+    padding: 9px;
+    width: 100%;
+    border: 0.5px solid rgba(145, 142, 142, 0.1);
+    margin-top: 10px 10px ;
+    border-radius: 5px;
+  }
+  
+  input::placeholder {
+    font-size: 20px;
+    color: rgb(124, 119, 119,0.7);
+    opacity: 0.4;
+  }
+  form .box {
+    
+    padding: 10px  ;
+    border-left: 1px solid rgba(128, 128, 128, 0.3);
+  }
+  form .box:nth-child(1) {
+    border-left: none;
+  }
+  form h4 {
+    font-weight: 600;
+  }
+  
+  @media screen and (max-width: 800px) {
+    .hero .container {
+      padding-top: 1%;
+      
+    }
+    form {
+      display: flex;
+      
+      flex-wrap:wrap;
+      margin-top: 200px;
+      
+      
+    }
+    form .box {
+      border-left: none;
+      
+    }
+    form input {
+      width: 100%;
+     
+    }
+  }
+  
