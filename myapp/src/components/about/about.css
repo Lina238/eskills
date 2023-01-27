@@ -1,0 +1,39 @@
+.about {
+    background-color: rgba(131, 199, 107, 0.2);
+    
+    
+  }
+  .about .heading {
+    font-size: 30px;
+    text-align: left;
+    width: 100%;
+    margin-top: 20px;
+    margin-bottom: 10px;
+  }
+  .about p {
+    
+    font-size: 20px;
+    padding-right: 30px;
+    margin-bottom: 20px;
+    line-height: 40px;
+  }
+  .about .container img{
+    display: block;
+    width: 100%;
+    border-radius :30px;;
+    margin-top: 100px;
+   
+  
+  }
+  @media screen and (max-width: 800px) {
+    .about .container {
+      flex-direction: column;
+    }
+    .about p {
+      padding: 0;
+    }
+    .about .container img {
+      margin-top: 50px;
+      margin-bottom: 30px;
+    }
+  }
