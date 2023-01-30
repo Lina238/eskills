@@ -1,6 +1,8 @@
 from rest_framework import serializers
 from django.contrib.auth.models import User
-from core.models import Annonce
+from core.models import Annonce,Annoncee
+from rest_framework.authentication import TokenAuthentication
+from rest_framework.permissions import IsAuthenticated
 from rest_framework.authtoken.models import Token
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
@@ -15,6 +17,15 @@ class UserSerializer(serializers.ModelSerializer):
 class AnnonceSerializer(serializers.ModelSerializer):
     class Meta:
         model = Annonce
-        fields = ['id', 'titre','niveau','discription','image','mode','nom','prix','lieu']  
-  
+        fields = ['id', 'titre','niveau','discription','image','mode','nom','prix','lieu',
+                #   'img'
+                  ]  
+class AnnonceeSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Annoncee
+        fields = ['id', 'titre','niveau','discription','image1','mode','nom','prix','lieu',
+                
+                  ]          
+        # authentication_class={TokenAuthentication,}
+        # permission_classes={IsAuthenticated,}
     

@@ -1,13 +1,12 @@
 import React from "react"
-import Footer from "../../common/footer/Fouter"
-import Header from "../../common/header/Header"
+
 import Heading from "../../common/Heading"
 import "./about.css"
 
 const About = () => {
   return (
     <>
-    <Header/>
+   
       <section className='about'>
         
         <div className='container flex mtop'>
@@ -23,7 +22,7 @@ const About = () => {
         </div>
         
       </section>
-      <Footer/>
+    
     </>
   )
 }

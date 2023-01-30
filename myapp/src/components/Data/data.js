@@ -6,7 +6,7 @@ export const nav= [
     },
     {
         text:"Services",
-        path:"/Services",
+        path:"Services",
 
     },
     {

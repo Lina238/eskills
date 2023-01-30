@@ -1,9 +1,10 @@
+from django.http import HttpResponse
 from django.shortcuts import render
 import csv
 from rest_framework import viewsets
 from django.contrib.auth.models import User
-from core.models import Annonce
-from .serializers import UserSerializer,AnnonceSerializer
+from core.models import Annonce,Annoncee
+from .serializers import UserSerializer,AnnonceSerializer,AnnonceeSerializer
 # Create your views here.
 def scores(request):
     fixtures=Annonce.objects.all()
@@ -40,4 +41,30 @@ class AnnonceViewSet(viewsets.ModelViewSet):
     serializer_class = AnnonceSerializer
     # reviens si tu veux savoir comment afficher qu'au gens qui sont contectés kan
     # authentication_classes = [TokenAuthentication, ]
-    # permission_classes = [IsAuthenticated, ]                      
+    # permission_classes = [IsAuthenticated, ]   
+class AnnonceeViewSet(viewsets.ModelViewSet):
+    queryset = Annoncee.objects.all()
+    serializer_class = AnnonceeSerializer
+    # reviens si tu veux savoir comment afficher qu'au gens qui sont contectés kan
+    # authentication_classes = [TokenAuthentication, ]
+    # permission_classes = [IsAuthenticated, ]                     
+    def post(self, request, *args, **kwargs):
+        image1 = request.data['image1']
+        titre = request.data['titre']
+        niveau = request.data['niveau']
+        discription = request.data['discription']
+        mode = request.data['mode']
+        nom= request.data['nom']
+        prix= request.data['prix']
+        lieu= request.data['lieu']
+        Annoncee.objects.create(titre=titre,
+                                image1=image1,
+                                niveau=niveau,
+                                discription=discription,
+                                mode=mode,
+                                nom=nom,
+                                prix=prix,
+                                lieu=lieu,
+                                )
+        return HttpResponse({'Annonce created!'}, status=200)               
+    

@@ -1,0 +1,170 @@
+/*.img{
+    background-image: url("./ima.jpg");
+    opacity: 0.85;
+    background-repeat: no-repeat;
+    background-position:center;
+    background-size:cover;
+    height: 90vh;
+    width: 100%;
+    box-shadow: inherit; 
+}
+.img h1 {
+  color: rgb(0, 0, 0);
+  padding-top: 280px;
+  padding-left: 10px;
+  font-size: 65px;   
+  font-weight: 900;
+  
+}
+
+.App {
+  text-align: center;
+  position: relative;
+  font-family: sans-serif;
+  width: 100vw;
+  min-height: 100vh;
+  background-size: cover;
+  background-position: center center;
+  background-attachment: fixed;
+  z-index: 1;
+}
+
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #101113;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}*/
+
+/*.main{
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+input{
+  display: none;
+}
+label{
+  color: white;
+}
+.uploadimage{
+  height: 25px;
+  width: 70px;
+  background-color: grey;
+  text-align: center;
+  border-radius: 5px;
+}
+.App {
+  text-align: center;
+}*/
+
+.main{
+  display: flex;
+  justify-content: left;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+label{
+  color: rgb(0, 0, 0);
+}
+label h4{
+  margin-top: 7px;
+}
+.uploadimage{
+  height: 40px;
+  width: 200px;
+  background-color:  hsl(104, 29%, 43%);
+  text-align: center;
+  border-radius: 5px;
+}
+.inp{
+display: none;
+}
+
+
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.container {
+
+  max-width: 1140px;
+  margin: 0 auto;
+}
+
+.form-outer input {
+  margin: 20px;
+  padding: 10px 10px;
+  border: 1px solid #dddddd;
+  width: 70%;
+}
+
+table td {
+  border: 1px solid #dddddd
+}
+
+.form-outer-wrapper {
+  width: 50%;
+  margin: 50px auto;
+  box-shadow: 0px 0pc 9px hsl(104, 28%, 34%);
+  padding: 20px 20px 20px 25px;
+  border-radius: 10px;
+
+}
+
+.form-outer-wrapper .btn-css{
+  margin: 20px;
+}
+.form-outer-wrapper .textArea {
+  width: 280px;
+}
+.form-outer-wrapper .drodownn{
+  width: 500px;
+}
+.form-outer-wrapper .lbl label {
+  margin-top: 10px;
+}
+/*.MuiFormControl-root{
+  /* width: 100%;} */
+
+.flex {
+  display: flex;
+  
+}
+

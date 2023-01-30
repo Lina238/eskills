@@ -1,13 +1,15 @@
 import { useState } from "react";
-import { FaRegHeart } from "react-icons/fa";
+import { FaHeart } from "react-icons/fa";
 import { FaRegCommentDots } from "react-icons/fa";
 import { FaLocationArrow} from "react-icons/fa";
-import Footer from "../../common/footer/Fouter";
-import Header from "../../common/header/Header";
+import {Link} from 'react-router-dom'
+import React  from "react"
+
+
+
+
 
 function Anounces () {
-
-
 
   const [cards] = useState([
     {
@@ -68,58 +70,23 @@ function Anounces () {
     
           
   ])
-    // const loadAnnoces = () => {
-
-//       fetch('http://127.0.0.1:8000/core/annonces/', {
-//         method: 'GET',
-//         headers: {
-//           'Content-Type': 'application/json',
-//         },
-//         body: JSON.stringify(state.credentials)
-//       })
-//       .then( data => data.json())
-//       .then(
-//         data => {
-//           state.annonces= data
-          
-//         },
-//         console.log(state.annonces)
-//       )
-//       .then(
-//         console.log(state.annonces),
-//         state.annonces.map((annonce) =>(                
-//           setCards([...cards,{
-//           id:cards.length,
-//           title:annonce.titre,
-//           text:annonce.discription,
-//           price:annonce.prix,
-//           src:annonce.image,
-//           prof:annonce.nom
-
-//          }])
-       
-     
-//  ))
-//       )
-//       .catch( error => console.error(error))
-//     // }
   return (
     <div>
-      <Header/>
+      
       <section>
       <h1 className="heading"> Anounces</h1>
         <div className="container">
-          
+        
           <div className="cards">
             {cards.map((card, i) =>(
                 <div key={i} className="card">
                   
                   <h3 className="titles">{card.title}</h3>
-                  <div className="iconscarte"> <FaRegHeart/> <FaRegCommentDots/> <FaLocationArrow/></div>
+                  <div className="iconscarte"> <FaHeart className="heart"/> <Link to ="/chat"> <FaRegCommentDots/> </Link><FaLocationArrow/></div>
                   
                   <h6 className="prices">{card.price}</h6>
                   
-                  <img className="images" src={card.src}/>
+                  <Link to ="/DetailsAnounce"><img className="images" src={card.src}/></Link>
                   <p className="texts">{card.text}</p>
                   <h6 className="profs">{card.prof}</h6>
                   
@@ -133,7 +100,7 @@ function Anounces () {
           </div>
         </div>
       </section>
-      <Footer/>
+     
     </div> 
     
   );

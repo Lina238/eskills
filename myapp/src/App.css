@@ -7,7 +7,7 @@
 }
 body {
   font-family: "Poppins", sans-serif;
-  background-color: rgba(131, 199, 107, 0.2);
+  background-color: white;
 }
 .container {
   max-width: 90%;
@@ -101,8 +101,8 @@ button.btn {
   font-size: 18px;
   font-weight: 500;
   border-radius: 5px;
-  border: 2px solid #f9004d;
-  background-color: #f9004d;
+  
+
   color: #fff !important;
   text-transform: uppercase;
   letter-spacing: 2px;
@@ -238,6 +238,7 @@ section{
 }
 
 
+/*css ta3 signIn*/
 .App {
   
   display: flex;
@@ -256,8 +257,17 @@ section{
   background-color: white;
   margin-top: 50px;
  
-  
-  
+
+}
+
+.btn10{
+background-color: rgba(95, 141, 78, 0.1);
+color: #5F8D4E;
+}
+
+.btn10:hover{
+  background-color: #5F8D4E;
+  color: white;
 }
 
 .register span{
@@ -418,4 +428,36 @@ section{
   .register1 .col-3 img{
     display: initial;
   }
+}
+
+
+
+@keyframes heartbeat{
+  0%{
+     transform: scale(1);  
+  }
+
+  50%{
+     transform: scale(1.25);
+  }
+
+  100%{
+     transform: scale(1);
+  }
+}
+
+
+.heart{
+  color: black;
+  cursor: pointer;
+
+}
+
+.heart:hover{
+  animation: heartbeat 1s infinite;
+  fill: red;
+  color: red;
+  opacity: 1;
+  transition: opacity 500ms;
+
 }
