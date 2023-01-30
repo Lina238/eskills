@@ -1,0 +1,106 @@
+import { useState } from "react";
+import { FaHeart } from "react-icons/fa";
+import { FaRegCommentDots } from "react-icons/fa";
+import { FaLocationArrow} from "react-icons/fa";
+import {Link} from 'react-router-dom'
+import React  from "react"
+import {useEffect} from 'react';
+
+
+
+function Anounces () {
+
+    // 
+  const [cards,setCards] = useState(
+ )
+    // const [annonce,setannonce]=useState(
+    //   {
+    //   annonces:[]})
+    useEffect(()=> {
+      fetch('http://127.0.0.1:8000/core/annonces1/', {
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(cards.credentials)
+      })
+      .then( data => data.json())
+      .then(
+        data => {
+             console.log(typeof(data))
+  
+          if(!(data in cards)){
+            setCards(data)
+          }
+          else{console.log("element exists")}
+       
+        })
+      .then(
+        console.log(cards),
+//         state.annonces.map((annonce) =>(                
+//           setCards([...cards,{
+//           id:cards.length,
+//           title:annonce.titre,
+//           text:annonce.discription,
+//           price:annonce.prix,
+//           src:annonce.image,
+//           prof:annonce.nom
+
+//          }])
+       
+     
+//  ))
+      )
+      .catch( error => console.error(error))
+      }, [])
+    
+//               annonce.annonces.map((annonce) =>(                
+//           setCards([...cards,{
+//           id:cards.length,
+//           title:annonce.titre,
+//           text:annonce.discription,
+//           price:annonce.prix,
+//           src:annonce.image,
+//           prof:annonce.nom
+
+//          }])
+       
+     
+//  ))
+  return (
+    <div>
+      
+      <section>
+      <h1 className="heading"> Anounces</h1>
+        <div className="container">
+        
+          <div className="cards">
+            {cards.map((card, i) =>(
+                <div key={i} className="card">
+                  
+                  <h3 className="titles">{card.title}</h3>
+                  <div className="iconscarte"> <FaHeart className="heart"/> <Link to ="/chat"> <FaRegCommentDots/> </Link><FaLocationArrow/></div>
+                  
+                  <h6 className="prices">{card.price}</h6>
+                  
+                  <Link to ="/DetailsAnounce"><img className="images" src={card.src}/></Link>
+                  <p className="texts">{card.text}</p>
+                  <h6 className="profs">{card.prof}</h6>
+                  
+                  
+                  
+                </div>
+              ))
+            }
+
+            
+          </div>
+        </div>
+      </section>
+     
+    </div> 
+    
+  );
+}
+
+export default Anounces;
